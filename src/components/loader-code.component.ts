@@ -6,7 +6,12 @@ import { ContentLoaderBaseComponent } from './loader-base.component';
 @Component({
   selector: 'content-loader-code',
   template: `
-    <content-loader-wrapper>
+    <content-loader-wrapper [width]="width"
+                            [height]="height"
+                            [style]="style"
+                            [primaryColor]="primaryColor"
+                            [secondaryColor]="secondaryColor"
+                            [speed]="speed">
       <svg:rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
       <svg:rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
       <svg:rect x="190" y="0" rx="3" ry="3" width="10" height="10" />

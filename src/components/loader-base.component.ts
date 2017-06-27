@@ -1,5 +1,4 @@
 import { Component, Input, Inject } from '@angular/core';
-import * as uuid from 'uuid';
 import { ContentLoaderConfig } from '../models';
 import { ConfigToken } from '../tokens';
 
@@ -16,9 +15,6 @@ export class ContentLoaderBaseComponent {
   @Input() public height: number = this.config.height;
   @Input() public primaryColor: string = this.config.primaryColor;
   @Input() public secondaryColor: string = this.config.secondaryColor;
-
-  public idClip: string = uuid.v1();
-  public idGradient: string = uuid.v1();
 
   constructor(@Inject(ConfigToken) public config: ContentLoaderConfig) {}
 }

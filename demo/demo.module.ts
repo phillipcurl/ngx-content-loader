@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { ContentLoaderModule } from '../src';
 import { DemoComponent } from './demo.component';
 
@@ -7,6 +8,7 @@ import { DemoComponent } from './demo.component';
   declarations: [DemoComponent],
   imports: [
     BrowserModule,
+    FormsModule,
     ContentLoaderModule
     // ContentLoaderModule.configureHOC({
     //   primaryColor: 'red'

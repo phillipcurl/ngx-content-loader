@@ -6,7 +6,12 @@ import { ContentLoaderBaseComponent } from './loader-base.component';
 @Component({
   selector: 'content-loader-media',
   template: `
-    <content-loader-wrapper>
+    <content-loader-wrapper [width]="width"
+                            [height]="height"
+                            [style]="style"
+                            [primaryColor]="primaryColor"
+                            [secondaryColor]="secondaryColor"
+                            [speed]="speed">
       <svg:rect x="0" y="0" rx="5" ry="5" width="70" height="70"></svg:rect>
 
       <svg:rect x="80" y="17" rx="4" ry="4" width="300" height="13"></svg:rect>
@@ -18,9 +23,4 @@ import { ContentLoaderBaseComponent } from './loader-base.component';
     </content-loader-wrapper>
   `
 })
-export class ContentLoaderMediaComponent extends ContentLoaderBaseComponent
-  implements OnInit {
-  ngOnInit(): any {
-    console.log('loaded');
-  }
-}
+export class ContentLoaderMediaComponent extends ContentLoaderBaseComponent {}

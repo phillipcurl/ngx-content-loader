@@ -34,7 +34,7 @@
     </svg>
   </a>
 
-  <header class="dt ph3 ph4-m ph6-l pv3 pv4-ns bg-light-green">
+  <header class="dt ph3 ph4-m ph6-l pv3 pv4-ns bg-green">
     <center class="dtc v-mid tl">
       <h1 class="f1 f-subheadline-m f-headline-l lh-title tracked-tight">ngx-content-loader</h1>
       <h2 class="normal f3 f2-ns mv0 lh-title">A collection of Angular SVG-based components to use as placeholders when loading content</h2>
@@ -46,8 +46,8 @@
     </center>
   </header>
 
-  <main class="dt ph3 ph4-m ph6-l pv3 pv4-ns">
-    <div>
+  <main class="dt ph3 pv3 pv4-ns mw6 center">
+    <div class="measure-wide overflow-auto">
       <h3>Installation</h3>
       <div class="mb3">
         <p class="lh-copy">Install via Yarn or NPM:</p>
@@ -69,6 +69,64 @@ export class AppModule {}</code></pre>
       </div>
     </div>
     <content-loader-demo-app>Loading demo...</content-loader-demo-app>
+    <div class="overflow-auto">
+      <table class="f6 w-100 mw8 center" cellspacing="0">
+        <thead>
+          <tr>
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Name</th>
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Type</th>
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Default</th>
+            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Description</th>
+          </tr>
+        </thead>
+        <tbody class="lh-copy">
+          <tr>
+            <td class="pv3 pr3 bb b--black-20">style</td>
+            <td class="pv3 pr3 bb b--black-20"><em>Object</em></td>
+            <td class="pv3 pr3 bb b--black-20"><code>null</code></td>
+            <td class="pv3 pr3 bb b--black-20">Ex: <code><span class="p">{</span><span class="w"> </span><span class="err">marginTop:</span><span class="w"> </span><span class="err">'50px'</span><span class="w"> </span><span class="p">}</span></code></td>
+          </tr>
+          <tr>
+            <td class="pv3 pr3 bb b--black-20">type</td>
+            <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
+            <td class="pv3 pr3 bb b--black-20"><code>facebook</code></td>
+            <td class="pv3 pr3 bb b--black-20">Options: <code>facebook</code>, <code>instagram</code>,
+              <code>code</code>
+            </td>
+          </tr>
+          <tr>
+            <td class="pv3 pr3 bb b--black-20">speed</td>
+            <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
+            <td class="pv3 pr3 bb b--black-20"><code>2</code></td>
+            <td class="pv3 pr3 bb b--black-20">Animation speed</td>
+          </tr>
+          <tr>
+            <td class="pv3 pr3 bb b--black-20">width</td>
+            <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
+            <td class="pv3 pr3 bb b--black-20"><code>400</code></td>
+            <td class="pv3 pr3 bb b--black-20">Width component</td>
+          </tr>
+          <tr>
+            <td class="pv3 pr3 bb b--black-20">height</td>
+            <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
+            <td class="pv3 pr3 bb b--black-20"><code>130</code></td>
+            <td class="pv3 pr3 bb b--black-20">Height component</td>
+          </tr>
+          <tr>
+            <td class="pv3 pr3 bb b--black-20">primaryColor</td>
+            <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
+            <td class="pv3 pr3 bb b--black-20"><code>#f3f3f3</code></td>
+            <td class="pv3 pr3 bb b--black-20">Background color of the SVG</td>
+          </tr>
+          <tr>
+            <td class="pv3 pr3 bb b--black-20">secondaryColor</td>
+            <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
+            <td class="pv3 pr3 bb b--black-20"><code>#ecebeb</code></td>
+            <td class="pv3 pr3 bb b--black-20">Animation color</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 
 </body>
