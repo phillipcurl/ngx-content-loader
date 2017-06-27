@@ -5,7 +5,13 @@ import { DemoComponent } from './demo.component';
 
 @NgModule({
   declarations: [DemoComponent],
-  imports: [BrowserModule, ContentLoaderModule.forRoot()],
+  imports: [
+    BrowserModule,
+    ContentLoaderModule
+    // ContentLoaderModule.configureHOC({
+    //   primaryColor: 'red'
+    // })
+  ],
   bootstrap: [DemoComponent]
 })
 export class DemoModule {}
