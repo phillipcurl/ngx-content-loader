@@ -6,25 +6,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
   <title>ngx-content-loader</title>
   <style>
-    html,
     body {
       overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     }
 
-    pre,
-    code {
+    a {
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: tomato;
+    }
+
+    a:not(.black) {
+      color: tomato;
+    }
+
+    a:not(.black):hover {
+      color: black;
+    }
+
+    pre {
+      border-color: tomato !important;
       overflow-x: auto;
+    }
+
+    input[type="color"] {
+      border-image: none;
+      /*margin: 0 0.5rem;*/
+    }
+
+    .github-corner {
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+
+    .github-corner:hover .octo-arm {
+      animation: octocat-wave 560ms ease-in-out
+    }
+
+    @keyframes octocat-wave {
+      0%,
+      100% {
+        transform: rotate(0)
+      }
+      20%,
+      60% {
+        transform: rotate(-25deg)
+      }
+      40%,
+      80% {
+        transform: rotate(10deg)
+      }
+    }
+
+    @media (max-width:500px) {
+      .github-corner {
+        display: none;
+      }
+      .github-corner:hover .octo-arm {
+        animation: none
+      }
+      .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+      }
     }
 
   </style>
 </head>
 
-<body class="w-100 sans-serif">
+<body>
 
   <a href="https://github.com/phillipcurl/ngx-content-loader" class="github-corner hidden-xs" aria-label="View source on Github">
-    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:tomato; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
       aria-hidden="true">
       <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
       <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -34,28 +93,36 @@
     </svg>
   </a>
 
-  <header class="dt ph3 ph4-m ph6-l pv3 pv4-ns bg-green">
-    <center class="dtc v-mid tl">
-      <h1 class="f1 f-subheadline-m f-headline-l lh-title tracked-tight">ngx-content-loader</h1>
-      <h2 class="normal f3 f2-ns mv0 lh-title">A collection of Angular SVG-based components to use as placeholders when loading content</h2>
-      <nav class="list pa0 mv4 lh-copy">
-        <a class="dib mr2 link underline-hover dark-gray b ttu" title="Demo" href="javascript:;">Demo</a>
-        <a class="dib mr2 link underline-hover dark-gray b ttu" title="Installation" href="https://github.com/phillipcurl/ngx-content-loader#installation">Installation</a>
-        <a class="dib mr2 link underline-hover dark-gray b ttu" title="Documentation" href="https://phillipcurl.github.io/ngx-content-loader/docs/">Documentation</a>
-      </nav>
-    </center>
+  <header class="bg-white black-80 tc pt4 pb3">
+    <!--<a href="" class="bg-black-80 ba b--black dib pa3 w2 h2 br-100">
+      <svg class="white" data-icon="skull" viewBox="0 0 32 32" style="fill:currentcolor"><title>skull icon</title><path d="M16 0 C6 0 2 4 2 14 L2 22 L6 24 L6 30 L26 30 L26 24 L30 22 L30 14 C30 4 26 0 16 0 M9 12 A4.5 4.5 0 0 1 9 21 A4.5 4.5 0 0 1 9 12 M23 12 A4.5 4.5 0 0 1 23 21 A4.5 4.5 0 0 1 23 12"></path></svg>
+    </a>-->
+    <h1 class="mt2 mb0 f2 f1-ns">ngx-content-loader</h1>
+    <h2 class="mt2 mb0 ph3 f6 fw4 ttu tracked measure w100 center">A collection of Angular SVG components to use as placeholders when loading content</h2>
+    <nav class="tc mw7 center mt4">
+      <a class="f5 f4-ns link b no-underline black dib ph2 pv1 pa3" title="Components" href="#components">Components</a>
+      <a class="f5 f4-ns link b no-underline black dib ph2 pv1 pa3" title="Configuration" href="#configuration">Configuration</a>
+      <a class="f5 f4-ns link b no-underline black dib ph2 pv1 pa3" title="GitHub" href="https://github.com/phillipcurl/ngx-content-loader">GitHub</a>
+      <!--<a class="f5 f4-ns link b no-underline black dib ph2 pv1 pa3" title="Documentation" href="https://phillipcurl.github.io/ngx-content-loader/docs/">Documentation</a>-->
+    </nav>
   </header>
 
-  <main class="dt ph3 pv3 pv4-ns mw6 center">
-    <div class="measure-wide overflow-auto">
-      <h3>Installation</h3>
-      <div class="mb3">
+  <main class="mw7-ns center pa3 ph5-ns">
+    <section class="mt0-l">
+      <p class="lh-copy f4">
+        This project is heavily inspired by <a href="https://danilowoz.github.io/react-content-loader/" target="_blank" class="link b no-underline">react-content-loader</a>.
+        Some changes have been made, specifically to support the ability to create custom content loader components.
+      </p>
+    </section>
+    <section class="pv4">
+      <h2 class="f3 f2-ns">Installation</h2>
+      <article class="mb3">
         <p class="lh-copy">Install via Yarn or NPM:</p>
-        <pre class="bg-light-gray br0 pa3 bl bw3 b--green"><code>yarn add ngx-content-loader</code></pre>
-      </div>
-      <div class="mb3">
+        <pre class="bg-light-gray br0 pa3 bl bw3 html"><code>yarn add ngx-content-loader</code></pre>
+      </article>
+      <article class="mb3">
         <p class="lh-copy">Import the ContentLoaderModule into your AppModule:</p>
-        <pre class="bg-light-gray br0 pa3 bl bw3 b--green"><code>import { NgModule } from '@angular/core';
+        <pre class="bg-light-gray br0 pa3 bl bw3 ts"><code>import { NgModule } from '@angular/core';
 import { ContentLoaderModule } from 'ngx-content-loader';
 
 @NgModule({
@@ -66,69 +133,156 @@ import { ContentLoaderModule } from 'ngx-content-loader';
   ]
 })
 export class AppModule {}</code></pre>
-      </div>
-    </div>
-    <content-loader-demo-app>Loading demo...</content-loader-demo-app>
-    <div class="overflow-auto">
-      <table class="f6 w-100 mw8 center" cellspacing="0">
-        <thead>
-          <tr>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Name</th>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Type</th>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Default</th>
-            <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Description</th>
-          </tr>
-        </thead>
-        <tbody class="lh-copy">
-          <tr>
-            <td class="pv3 pr3 bb b--black-20">style</td>
-            <td class="pv3 pr3 bb b--black-20"><em>Object</em></td>
-            <td class="pv3 pr3 bb b--black-20"><code>null</code></td>
-            <td class="pv3 pr3 bb b--black-20">Ex: <code><span class="p">{</span><span class="w"> </span><span class="err">marginTop:</span><span class="w"> </span><span class="err">'50px'</span><span class="w"> </span><span class="p">}</span></code></td>
-          </tr>
-          <tr>
-            <td class="pv3 pr3 bb b--black-20">type</td>
-            <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
-            <td class="pv3 pr3 bb b--black-20"><code>facebook</code></td>
-            <td class="pv3 pr3 bb b--black-20">Options: <code>facebook</code>, <code>instagram</code>,
-              <code>code</code>
-            </td>
-          </tr>
-          <tr>
-            <td class="pv3 pr3 bb b--black-20">speed</td>
-            <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
-            <td class="pv3 pr3 bb b--black-20"><code>2</code></td>
-            <td class="pv3 pr3 bb b--black-20">Animation speed</td>
-          </tr>
-          <tr>
-            <td class="pv3 pr3 bb b--black-20">width</td>
-            <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
-            <td class="pv3 pr3 bb b--black-20"><code>400</code></td>
-            <td class="pv3 pr3 bb b--black-20">Width component</td>
-          </tr>
-          <tr>
-            <td class="pv3 pr3 bb b--black-20">height</td>
-            <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
-            <td class="pv3 pr3 bb b--black-20"><code>130</code></td>
-            <td class="pv3 pr3 bb b--black-20">Height component</td>
-          </tr>
-          <tr>
-            <td class="pv3 pr3 bb b--black-20">primaryColor</td>
-            <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
-            <td class="pv3 pr3 bb b--black-20"><code>#f3f3f3</code></td>
-            <td class="pv3 pr3 bb b--black-20">Background color of the SVG</td>
-          </tr>
-          <tr>
-            <td class="pv3 pr3 bb b--black-20">secondaryColor</td>
-            <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
-            <td class="pv3 pr3 bb b--black-20"><code>#ecebeb</code></td>
-            <td class="pv3 pr3 bb b--black-20">Animation color</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      </article>
+    </section>
+    <section id="components" class="pv4">
+      <h2 class="f3 f2-ns">Components</h2>
+      <content-loader-demo-app>Loading demo...</content-loader-demo-app>
+    </section>
+    <section id="configuration" class="pv4">
+      <h2 class="f3 f2-ns">Configuration</h2>
+      <article class="mb4">
+        <p class="lh-copy">
+          The table at the bottom of this section lists all available input options.
+        </p>
+        <p class="lh-copy">
+          In most cases, you won't find yourself needing to pass many options to the components. For example, all ngx-content-loader's
+          are responsive in nature, so in 95% of use-cases you won't need to supply <code class="bg-light-gray">[height]</code>          or <code class="bg-light-gray">[width]</code> inputs.
+        </p>
+      </article>
+      <article class="mb4">
+        <h3 class="f4 f3-ns">Passing Settings as Component Inputs</h3>
+        <p class="lh-copy">
+          All components accept standard Angular inputs as options:
+        </p>
+        <pre class="bg-light-gray br0 pa3 bl bw3 html"><code>&#60;content-loader-post [primaryColor]="#cecece"&#62;&#60;&#47;content-loader-post&#62;</code></pre>
+      </article>
+      <article class="mb4">
+        <h3 class="f4 f3-ns">Setting Options Globally at Module Import</h3>
+        <p class="lh-copy">
+          An additional option is to configure the components via the ContentLoaderModule. This will override the default options and
+          apply the settings to all ngx-content-loader's. Passing an input directly to a component will still override whatever
+          default or global settings are set.
+        </p>
+        <p class="lh-copy">Import the ContentLoaderModule into your AppModule and pass any config options you'd like:</p>
+        <pre class="bg-light-gray br0 pa3 bl bw3 ts"><code>import { NgModule } from '@angular/core';
+import { ContentLoaderModule } from 'ngx-content-loader';
+
+@NgModule({
+  imports: [
+    ...,
+    ContentLoaderModule.configure({
+      speed: 1,
+      primaryColor: '#cecece',
+      secondaryColor: '#ccc'
+    }),
+    ...
+  ]
+})
+export class AppModule {}</code></pre>
+      </article>
+      <article class="mb4 overflow-auto">
+        <h3 class="f4 f3-ns">All Options</h3>
+        <table class="f6 w-100 mw8 center" cellspacing="0">
+          <thead>
+            <tr>
+              <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Name</th>
+              <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Type</th>
+              <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Default</th>
+              <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Description</th>
+            </tr>
+          </thead>
+          <tbody class="lh-copy">
+            <tr>
+              <td class="pv3 pr3 bb b--black-20">style</td>
+              <td class="pv3 pr3 bb b--black-20"><em>Object</em></td>
+              <td class="pv3 pr3 bb b--black-20"><code>null</code></td>
+              <td class="pv3 pr3 bb b--black-20">Ex: <code><span class="p">{</span><span class="w"> </span><span class="err">'margin-top':</span><span class="w"> </span><span class="err">'50px'</span><span class="w"> </span><span class="p">}</span></code></td>
+            </tr>
+            <!--<tr>
+              <td class="pv3 pr3 bb b--black-20">type</td>
+              <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
+              <td class="pv3 pr3 bb b--black-20"><code>facebook</code></td>
+              <td class="pv3 pr3 bb b--black-20">Options: <code>facebook</code>, <code>instagram</code>,
+                <code>code</code>
+              </td>
+            </tr>-->
+            <tr>
+              <td class="pv3 pr3 bb b--black-20">speed</td>
+              <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
+              <td class="pv3 pr3 bb b--black-20"><code>2</code></td>
+              <td class="pv3 pr3 bb b--black-20">Animation speed in seconds</td>
+            </tr>
+            <tr>
+              <td class="pv3 pr3 bb b--black-20">width</td>
+              <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
+              <td class="pv3 pr3 bb b--black-20"><code>400</code></td>
+              <td class="pv3 pr3 bb b--black-20">Width component</td>
+            </tr>
+            <tr>
+              <td class="pv3 pr3 bb b--black-20">height</td>
+              <td class="pv3 pr3 bb b--black-20"><em>Number</em></td>
+              <td class="pv3 pr3 bb b--black-20"><code>130</code></td>
+              <td class="pv3 pr3 bb b--black-20">Height component</td>
+            </tr>
+            <tr>
+              <td class="pv3 pr3 bb b--black-20">primaryColor</td>
+              <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
+              <td class="pv3 pr3 bb b--black-20"><code>#f3f3f3</code></td>
+              <td class="pv3 pr3 bb b--black-20">Background color of the SVG</td>
+            </tr>
+            <tr>
+              <td class="pv3 pr3 bb b--black-20">secondaryColor</td>
+              <td class="pv3 pr3 bb b--black-20"><em>String</em></td>
+              <td class="pv3 pr3 bb b--black-20"><code>#ecebeb</code></td>
+              <td class="pv3 pr3 bb b--black-20">Animation color</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+    </section>
+
+    <section id="configuration" class="pv4">
+      <h2 class="f3 f2-ns">Advanced</h2>
+      <article class="mb4">
+        <h3 class="f4 f3-ns">Building Custom Loaders</h3>
+        <p class="lh-copy">
+          ngx-content-loader makes it easy to build custom loaders components.
+        </p>
+      </article>
+    </section>
+
+    <section id="configuration" class="pv4">
+      <h2 class="f3 f2-ns">Credits</h2>
+      <article class="mb4">
+      </article>
+    </section>
+
+    <section id="configuration" class="pv4">
+      <h2 class="f3 f2-ns">License</h2>
+      <article class="mb4">
+        <p class="lh-copy">ngx-content-loader is licensed under </p>
+      </article>
+    </section>
+
   </main>
 
+  <footer class="pv4 ph3 ph5-m ph6-l mid-gray">
+    <small class="f6 db tc">© 2016 <b class="ttu">SOME COMPANY Inc</b>., All Rights Reserved</small>
+    <div class="tc mt3">
+      <a href="/language/" title="Language" class="f6 dib ph2 link mid-gray dim">Language</a>
+      <a href="/terms/" title="Terms" class="f6 dib ph2 link mid-gray dim">Terms of Use</a>
+      <a href="/privacy/" title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
+    </div>
+  </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/typescript.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+
+  </script>
 </body>
 
 </html>

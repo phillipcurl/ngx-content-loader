@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import * as uuid from 'uuid';
 import { ContentLoaderConfig } from '../models';
 import { ConfigToken } from '../tokens';
@@ -8,12 +8,12 @@ import { ContentLoaderBaseComponent } from './loader-base.component';
   selector: 'content-loader-wrapper',
   template: `
     <svg [attr.viewBox]="'0 0 ' + width + ' ' + height"
-         version="1.1" [attr.style]="style.toString()"
+         version="1.1" [ngStyle]="style"
          preserveAspectRatio="xMidYMid meet">
         <svg:rect [attr.fill]="'url(#' + idGradient + ')'"
                   [attr.clip-path]="'url(#' + idClip + ')'"
                   x="0" y="0"
-                  [attr.width]="'100%'" [attr.height]="height">
+                  [attr.width]="width" [attr.height]="height">
         </svg:rect>
 
         <defs>

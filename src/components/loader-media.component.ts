@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContentLoaderConfig } from '../models';
 import { ConfigToken } from '../tokens';
 import { ContentLoaderBaseComponent } from './loader-base.component';

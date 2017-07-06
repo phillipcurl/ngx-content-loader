@@ -6,4 +6,5 @@ export interface ContentLoaderConfig {
   height?: number; // Height component
   primaryColor?: string; // Background color of the SVG
   secondaryColor?: string; // The color of the animated gradient
+  visible?: boolean;
 }

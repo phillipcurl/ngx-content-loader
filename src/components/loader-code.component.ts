@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { ContentLoaderConfig } from '../models';
 import { ConfigToken } from '../tokens';
 import { ContentLoaderBaseComponent } from './loader-base.component';
@@ -12,7 +12,7 @@ import { ContentLoaderBaseComponent } from './loader-base.component';
                             [primaryColor]="primaryColor"
                             [secondaryColor]="secondaryColor"
                             [speed]="speed">
-      <svg:rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
+      <svg:rect [x]="0" [y]="0" [width]="70" loaderLine />
       <svg:rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
       <svg:rect x="190" y="0" rx="3" ry="3" width="10" height="10" />
 
@@ -30,4 +30,9 @@ import { ContentLoaderBaseComponent } from './loader-base.component';
     </content-loader-wrapper>
   `
 })
-export class ContentLoaderCodeComponent extends ContentLoaderBaseComponent {}
+export class ContentLoaderCodeComponent extends ContentLoaderBaseComponent {
+  constructor(@Inject(ConfigToken) public config: ContentLoaderConfig) {
+    super(config);
+    this.height = 100;
+  }
+}

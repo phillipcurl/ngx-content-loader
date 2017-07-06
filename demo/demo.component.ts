@@ -4,49 +4,41 @@ import { DEFAULT_CONFIG } from './../src';
 @Component({
   selector: 'content-loader-demo-app',
   template: `
-    <section class="cf">
-      <article class="mb5">
-        <h3>content-loader-media</h3>
-        <content-loader-media></content-loader-media>
-      </article>
-      <article class="mb5">
-        <h3>content-loader-code</h3>
-        <content-loader-code height=100></content-loader-code>
-      </article>
-      <article class="mb5">
-        <h3>content-loader-post</h3>
-        <content-loader-post height=400></content-loader-post>
-      </article>
-    </section>
+    <article class="mb5">
+      <h3 class="f4 f3-ns">Media Object</h3>
+      <pre class="bg-light-gray br0 pa3 bl bw3"><code>&#60;content-loader-media&#62;&#60;&#47;content-loader-media&#62;</code></pre>
+      <content-loader-media [style]="{'margin-top': '20px'}"></content-loader-media>
+    </article>
+    <article class="mb5">
+      <h3 class="f4 f3-ns">Code Block</h3>
+      <pre class="bg-light-gray br0 pa3 bl bw3"><code>&#60;content-loader-code&#62;&#60;&#47;content-loader-code&#62;</code></pre>
+      <content-loader-code [style]="{'margin-top': '20px'}"></content-loader-code>
+    </article>
+    <article class="mb5">
+      <h3 class="f4 f3-ns">Instagram-style Post</h3>
+      <pre class="bg-light-gray br0 pa3 bl bw3"><code>&#60;content-loader-post&#62;&#60;&#47;content-loader-post&#62;</code></pre>
+      <content-loader-post [style]="{'margin-top': '20px'}"></content-loader-post>
+    </article>
 
-    <section class="cf mb4">
-      <h2>Content loaders are dynamic and customizable. Try editing the values for the loader below.</h2>
+    <article class="cf">
+      <h4 class="f4 f3-ns">
+        Content loaders are dynamic and customizable. Try editing the color values for the loader below to see that in action.
+      </h4>
       <div class="mb4">
         <div class="measure">
           <!-- <label for="name" class="f6 b db mb2">Name <span class="normal black-60">(optional)</span></label>
           <input [(ngModel)]="type" id="name" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text"> -->
-          <div class="cf">
-            <div class="fl w-100 w-33-ns pr1-ns">
-              <label for="speed" class="f6 b db mb2">Speed <span class="normal black-60">(optional)</span></label>
-              <input [(ngModel)]="speed" id="speed" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="number">
+          <div class="cf pr3-s">
+            <div class="fl w-100 w-50-ns pr3-ns">
+              <label for="primaryColor" class="f6 b db mb2">Primary Color</label>
+              <input [(ngModel)]="primaryColor" id="primaryColor" class="input-reset ba b--black-20 mb2 pa2 db w-100 bg-white" type="color">
             </div>
-            <div class="fl w-100 w-33-ns ph1-ns">
-              <label for="width" class="f6 b db mb2">Width <span class="normal black-60">(optional)</span></label>
-              <input [(ngModel)]="width" id="width" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="number">
-            </div>
-            <div class="fl w-100 w-33-ns pl1-ns">
-              <label for="height" class="f6 b db mb2">Height <span class="normal black-60">(optional)</span></label>
-              <input [(ngModel)]="height" id="height" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="number">
-            </div>
-          </div>
-          <div class="cf">
-            <div class="fl w-100 w-50-ns pr1-ns">
-              <label for="primaryColor" class="f6 b db mb2">Primary Color <span class="normal black-60">(optional)</span></label>
-              <input [(ngModel)]="primaryColor" id="primaryColor" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text">
-            </div>
-            <div class="fl w-100 w-50-ns pl1-ns">
-              <label for="secondaryColor" class="f6 b db mb2">Secondary Color <span class="normal black-60">(optional)</span></label>
-              <input [(ngModel)]="secondaryColor" id="secondaryColor" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text">
+            <div class="fr w-100 w-50-ns pl3-ns">
+              <label for="secondaryColor" class="f6 b db mb2">Secondary Color</label>
+              <input [(ngModel)]="secondaryColor"
+                     id="secondaryColor"
+                     class="input-reset ba b--black-20 mb2 pa2 db w-100 bg-white"
+                     type="color">
             </div>
           </div>
         </div>
@@ -60,7 +52,7 @@ import { DEFAULT_CONFIG } from './../src';
                             [(primaryColor)]="primaryColor"
                             [(secondaryColor)]="secondaryColor">
       </content-loader-media>
-    </section>
+    </article>
   `
 })
 export class DemoComponent {

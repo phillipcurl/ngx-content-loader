@@ -7,5 +7,6 @@ export const DEFAULT_CONFIG: ContentLoaderConfig = {
   width: 400,
   height: 130,
   primaryColor: '#f3f3f3',
-  secondaryColor: '#ecebeb'
+  secondaryColor: '#ececec',
+  visible: true
 };
