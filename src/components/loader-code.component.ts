@@ -12,21 +12,21 @@ import { ContentLoaderBaseComponent } from './loader-base.component';
                             [primaryColor]="primaryColor"
                             [secondaryColor]="secondaryColor"
                             [speed]="speed">
-      <svg:rect [x]="0" [y]="0" [width]="70" loaderLine />
-      <svg:rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
-      <svg:rect x="190" y="0" rx="3" ry="3" width="10" height="10" />
+      <svg:rect x="0" y="0" width="70" contentLoaderLine />
+      <svg:rect x="80" y="0" width="100" contentLoaderLine />
+      <svg:rect x="190" y="0" width="10" contentLoaderLine />
 
-      <svg:rect x="15" y="20" rx="3" ry="3" width="130" height="10" />
-      <svg:rect x="155" y="20" rx="3" ry="3" width="130" height="10" />
+      <svg:rect x="15" y="20" width="130" contentLoaderLine />
+      <svg:rect x="155" y="20" width="130" contentLoaderLine />
 
-      <svg:rect x="15" y="40" rx="3" ry="3" width="90" height="10" />
-      <svg:rect x="115" y="40" rx="3" ry="3" width="60" height="10" />
-      <svg:rect x="185" y="40" rx="3" ry="3" width="60" height="10" />
+      <svg:rect x="15" y="40" width="90" contentLoaderLine />
+      <svg:rect x="115" y="40" width="60" contentLoaderLine />
+      <svg:rect x="185" y="40" width="60" contentLoaderLine />
 
-      <svg:rect x="15" y="60" rx="3" ry="3" width="130" height="10" />
-      <svg:rect x="155" y="60" rx="3" ry="3" width="130" height="10" />
+      <svg:rect x="15" y="60" width="130" contentLoaderLine />
+      <svg:rect x="155" y="60" width="130" contentLoaderLine />
 
-      <svg:rect x="0" y="80" rx="3" ry="3" width="30" height="10" />
+      <svg:rect x="0" y="80" width="30" contentLoaderLine />
     </content-loader-wrapper>
   `
 })

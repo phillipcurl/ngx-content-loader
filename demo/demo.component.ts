@@ -52,6 +52,25 @@ import { DEFAULT_CONFIG } from './../src';
                             [(primaryColor)]="primaryColor"
                             [(secondaryColor)]="secondaryColor">
       </content-loader-media>
+
+      <h3>Custom</h3>
+      <content-loader-wrapper>
+        <svg:rect x="0" y="0" width="70" contentLoaderLine />
+        <svg:rect x="80" y="0" width="100" contentLoaderLine />
+        <svg:rect x="190" y="0" width="10" contentLoaderLine />
+
+        <svg:rect x="15" y="20" width="130" contentLoaderLine />
+        <svg:rect x="155" y="20" width="130" contentLoaderLine />
+
+        <svg:rect x="15" y="40" width="90" contentLoaderLine />
+        <svg:rect x="115" y="40" width="60" contentLoaderLine />
+        <svg:rect x="185" y="40" width="60" contentLoaderLine />
+
+        <svg:rect x="15" y="60" width="130" contentLoaderLine />
+        <svg:rect x="155" y="60" width="130" contentLoaderLine />
+
+        <svg:rect x="0" y="80" width="30" contentLoaderLine />
+      </content-loader-wrapper>
     </article>
   `
 })

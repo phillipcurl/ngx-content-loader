@@ -3,11 +3,16 @@ import { CommonModule } from '@angular/common';
 import { ContentLoaderConfig } from './models';
 import { ConfigToken } from './tokens';
 import { DEFAULT_CONFIG } from './constants';
+import { LOADER_DIRECTIVES } from './directives';
 import { LOADER_COMPONENTS } from './components';
 import { HelloWorldComponent } from './hello-world.component';
 
 @NgModule({
-  declarations: [HelloWorldComponent, ...LOADER_COMPONENTS],
+  declarations: [
+    HelloWorldComponent,
+    ...LOADER_COMPONENTS,
+    ...LOADER_DIRECTIVES
+  ],
   imports: [CommonModule],
   providers: [
     {
@@ -15,7 +20,7 @@ import { HelloWorldComponent } from './hello-world.component';
       useValue: DEFAULT_CONFIG
     }
   ],
-  exports: [HelloWorldComponent, ...LOADER_COMPONENTS]
+  exports: [HelloWorldComponent, ...LOADER_COMPONENTS, ...LOADER_DIRECTIVES]
 })
 export class ContentLoaderModule {
   static configureHOC(config: ContentLoaderConfig): ModuleWithProviders {
